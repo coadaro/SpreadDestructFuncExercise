@@ -1,5 +1,5 @@
 //1a
-jPDinos = [
+const jPDinos = [
     "Velociraptors", 
     "Tyrannosaurus Rex", 
      "Dilophosaurus"
@@ -11,6 +11,8 @@ function seeDinos(a, ...b) {
     console.log(b);
 };
 seeDinos("Velociraptors", "Tyrannosaurus Rex", "Dilophosaurus");
+//or
+seeDinos(...jPDinos)
 
 //2a
 const jPCharacters = {
@@ -20,8 +22,41 @@ const jPCharacters = {
 };
 
 //2b
-seeCharacters = (ellieSattler) => console.log(ellieSattler);
+seeCharacters = ({ellieSattler}) => console.log(ellieSattler);
 seeCharacters(jPCharacters);
 
 //bonus
 //3a
+const jurassicParkMovies = [
+    {
+        one: "Jurassic Park", 
+        two: "The Lost World: Jurassic Park", 
+        three: "Jurassic Park III"
+    },
+    {
+        four: "Jurassic World", 
+        five: "Jurassic World: Fallen Kingdom", 
+        six: "Jurassic World: Dominion"
+    }
+]
+
+//3b
+function seeJPMovies([{one, two, three}, {four, five, six}]) {
+    console.log(one);
+    console.log(two);
+    console.log(three);
+    console.log(four);
+    console.log(five);
+    console.log(six);
+};
+seeJPMovies(jurassicParkMovies);
+//or
+seeJPMovies = ({one, two, three}, {four, five, six}) => { 
+    console.log(one);
+    console.log(two);
+    console.log(three);
+    console.log(four);
+    console.log(five);
+    console.log(six);
+};
+seeJPMovies(...jurassicParkMovies);
